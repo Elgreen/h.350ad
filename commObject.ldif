@@ -1,0 +1,99 @@
+# commUniqueId
+
+dn: CN=commUniqueId,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: attributeSchema
+cn: commUniqueId
+name: commUniqueId
+adminDisplayName: commUniqueId
+lDAPDisplayName: commUniqueId
+adminDescription: To hold the endpoints unique Id
+attributeID: 0.0.8.350.1.1.2.1.1
+attributeSyntax: 2.5.5.5
+isSingleValued: TRUE
+showInAdvancedViewOnly: TRUE
+oMSyntax: 22
+searchFlags: 0
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
+
+# commOwner
+
+dn: CN=commOwner,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: attributeSchema
+cn: commOwner
+name: commOwner
+adminDisplayName: commOwner
+lDAPDisplayName: commOwner
+adminDescription: Labeled URI to point back to the original owner
+attributeID: 0.0.8.350.1.1.2.1.2
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: FALSE
+showInAdvancedViewOnly: TRUE
+searchFlags: 1
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
+
+# commPrivate
+
+dn: CN=commPrivate,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: attributeSchema
+cn: commPrivate
+name: commPrivate
+adminDisplayName: commPrivate
+lDAPDisplayName: commPrivate
+adminDescription: To decide whether the entry is visible to world or not
+attributeID: 0.0.8.350.1.1.2.1.3
+attributeSyntax: 2.5.5.5
+oMSyntax: 22
+isSingleValued: TRUE
+showInAdvancedViewOnly: TRUE
+searchFlags: 1
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
+
+# commObject
+
+dn: CN=commObject,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: classSchema
+cn: commObject
+adminDescription: object that contains the Communication attributes
+governsID: 0.0.8.350.1.1.2.2.1
+mustContain: commUniqueId
+mayContain: commOwner
+mayContain: commPrivate
+possSuperiors: organizationalUnit
+possSuperiors: container
+objectClassCategory: 1
+defaultSecurityDescriptor: 
+ D:(A;;LCRPRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOCRSD
+ RCWDWO;;;SY)
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-

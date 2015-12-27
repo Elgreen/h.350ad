@@ -1,0 +1,198 @@
+# SIPIdentitySIPURI
+
+dn: CN=SIPIdentitySIPURI,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: attributeSchema
+cn: SIPIdentitySIPURI
+name: SIPIdentitySIPURI
+adminDisplayName: SIPIdentitySIPURI
+lDAPDisplayName: SIPIdentitySIPURI
+adminDescription: Universal Resource Indicator of the SIP UA
+attributeID: 0.0.8.350.1.1.6.1.1
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+showInAdvancedViewOnly: TRUE
+searchFlags: 0
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
+
+# SIPIdentityRegistrarAddress
+
+dn: CN=SIPIdentityRegistrarAddress,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: attributeSchema
+cn: SIPIdentityRegistrarAddress
+name: SIPIdentityRegistrarAddress
+adminDisplayName: SIPIdentityRegistrarAddress
+lDAPDisplayName: SIPIdentityRegistrarAddress
+adminDescription: specifies the location of the registrar
+attributeID: 0.0.8.350.1.1.6.1.2
+attributeSyntax: 2.5.5.5
+oMSyntax: 22
+showInAdvancedViewOnly: TRUE
+searchFlags: 1
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
+
+
+# SIPIdentityProxyAddress
+
+dn: CN=SIPIdentityProxyAddress,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: attributeSchema
+cn: SIPIdentityProxyAddress
+name: SIPIdentityProxyAddress
+adminDisplayName: SIPIdentityProxyAddress
+lDAPDisplayName: SIPIdentityProxyAddress
+adminDescription: Specifies the location of the SIP Proxy
+attributeID: 0.0.8.350.1.1.6.1.3
+attributeSyntax: 2.5.5.5
+oMSyntax: 22
+showInAdvancedViewOnly: TRUE
+searchFlags: 1
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
+# SIPIdentityAddress
+
+dn: CN=SIPIdentityAddress,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: attributeSchema
+cn: SIPIdentityAddress
+name: SIPIdentityAddress
+adminDisplayName: SIPIdentityAddress
+lDAPDisplayName: SIPIdentityAddress
+adminDescription: IP address of the UA
+attributeID: 0.0.8.350.1.1.6.1.4
+attributeSyntax: 2.5.5.5
+oMSyntax: 22
+showInAdvancedViewOnly: TRUE
+searchFlags: 1
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
+
+# SIPIdentityServiceLevel
+
+dn: CN=SIPIdentityServiceLevel,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: attributeSchema
+cn: SIPIdentityServiceLevel
+name: SIPIdentityServiceLevel
+adminDisplayName: SIPIdentityServiceLevel
+lDAPDisplayName: SIPIdentityServiceLevel
+adminDescription: To define services that a user can belong to.
+attributeID: 0.0.8.350.1.1.6.1.7
+attributeSyntax: 2.5.5.5
+oMSyntax: 22
+showInAdvancedViewOnly: TRUE
+searchFlags: 1
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
+
+# SIPIdentityPassword
+
+dn: CN=SIPIdentityPassword,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: attributeSchema
+cn: SIPIdentityPassword
+name: SIPIdentityPassword
+adminDisplayName: SIPIdentityPassword
+lDAPDisplayName: SIPIdentityPassword
+adminDescription: The user agent SIP password
+attributeID: 0.0.8.350.1.1.6.1.5
+attributeSyntax: 2.5.5.10
+oMSyntax: 4
+showInAdvancedViewOnly: TRUE
+searchFlags: 1
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
+
+# SIPIdentityUserName
+
+dn: CN=SIPIdentityUserName,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: attributeSchema
+cn: SIPIdentityUserName
+name: SIPIdentityUserName
+adminDisplayName: SIPIdentityUserName
+lDAPDisplayName: SIPIdentityUserName
+adminDescription: The user agent user name.
+attributeID: 0.0.8.350.1.1.6.1.6
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+showInAdvancedViewOnly: TRUE
+searchFlags: 1
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
+
+
+# SIPIdentity
+
+dn: CN=SIPIdentity,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: classSchema
+cn: SIPIdentity
+adminDescription: SIPIdentity object
+governsID: 0.0.8.350.1.1.6.2.1
+mayContain: SIPIdentitySIPURI
+mayContain: SIPIdentityRegistrarAddress
+mayContain: SIPIdentityProxyAddress
+mayContain: SIPIdentityAddress
+mayContain: SIPIdentityPassword
+mayContain: SIPIdentityUserName
+mayContain: SIPIdentityServiceLevel
+mayContain: userSMIMECertificate
+possSuperiors: organizationalUnit
+possSuperiors: container
+objectClassCategory: 3
+defaultSecurityDescriptor: 
+ D:(A;;LCRPRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOCRSD
+ RCWDWO;;;SY)
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-

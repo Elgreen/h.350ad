@@ -1,0 +1,41 @@
+dn: CN=commURI,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: attributeSchema
+name: commURI
+adminDisplayName: commURI
+lDAPDisplayName: commURI
+adminDescription: Labeled URI format to point to the distinguished name of the commUniqueId
+attributeID: 0.0.8.350.1.1.1.1.1
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: FALSE
+showInAdvancedViewOnly: TRUE
+searchFlags: 1
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
+
+dn: CN=commURIObject,CN=Schema,CN=Configuration,DC=LM,DC=LOCAL
+changetype: add
+objectClass: top
+objectClass: classSchema
+adminDescription: object that contains the URI attribute type
+governsID: 0.0.8.350.1.1.1.2.1
+mayContain: commURI
+possSuperiors: organizationalUnit
+possSuperiors: container
+objectClassCategory: 3
+defaultSecurityDescriptor: 
+ D:(A;;LCRPRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOCRSD
+ RCWDWO;;;SY)
+
+dn:
+changetype: modify
+replace: schemaupdatenow
+schemaupdatenow: 1
+-
